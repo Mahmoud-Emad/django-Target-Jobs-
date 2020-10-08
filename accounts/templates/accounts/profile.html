@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block body %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{job}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 mx-auto">
+                    <div class="job_sumary">
+                        <div class="card text-center bg-transparent text-Black" style="margin-top: 20px;">
+                            <div class="card-body">
+                                <a href="{{profile.image.url}}"><img src="{{profile.image.url}}" alt="" style="width: 100px; height: 100px; margin-left: -500px; margin-top: -10px;" class="rounded-circle"></a>
+                                <h1 style="margin-top: -90px;">{{ user.first_name }} {{ user.last_name }}</h1>
+                            </div>
+                        </div>
+                        <div class="card-group bg-transparent text-white">
+                            <div class="card bg-transparent">
+                                <div class="card-body">
+                                    <h5 class="card-title">About..</h5>
+                                    </br>
+                                    <p class="card-text">Name is - {{profile}}</p>
+                                    <p class="card-text">Email - {{ profile.user.email }}</p>
+                                    <p class="card-text">Phone Number - {{ profile.phone_number }}</p>  
+                                    <p class="card-text">Address - {{ profile.city }}</p>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                          <a class="boxed-btn3 w-100" href="{% url 'accounts:profile_edit' %}">Edit you'r profile</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
